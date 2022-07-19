@@ -15,7 +15,6 @@
 <body>
     <div class="conatiner">
         <h1 class="text-center mt-3">Admin Panel</h1>
-        <p class="text-center mb-4">Please Login To Continue</p>
         <?php
         if (!empty($this->session->flashdata('msg'))) {
           echo "<div class='alert alert-danger mb-3 mx-auto' style='width:50%'>".$this->session->flashdata('msg')."</div>";
@@ -23,8 +22,9 @@
       ?>
         <form action="<?php echo base_url().'admin/login/authenticate' ;?>" name="loginform" id="loginform"
             method="POST" class="form-container mx-auto">
+            <h2 class="pb-4 text-center">Login</h2>
             <div class="form-group">
-                <label for="username">Enter Username</label>
+                <label for="username">Username</label>
                 <input type="text" class="form-control my-2" name="username" id="username" placeholder="Username">
                 <span></span>
             </div>
@@ -72,12 +72,12 @@
             const passwordVal = password.value.trim();
             
             if(usernameVal === "") {
-                setErrorMsg(username, 'username cannot be blank');
+                setErrorMsg(username, 'Username cannot be blank');
             } else {
                 setSuccessMsg(username);
             }
             if(passwordVal === "") {
-                setErrorMsg(password, 'password cannot be blank');
+                setErrorMsg(password, 'Password cannot be blank');
             } else {
                 setSuccessMsg(password);
             }
@@ -90,7 +90,7 @@
             const span = formGroup.querySelector('span');
             span.innerText = errormsgs;
             formInput.className = "form-control my-2 is-invalid";
-            span.className = "invalid-feedback font-weight-bold";
+            span.className = "invalid-feedback";
         }
 
         function setSuccessMsg(ele) {

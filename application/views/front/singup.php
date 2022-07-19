@@ -19,7 +19,7 @@
 <body>
     <div class="wrapper container">
 
-        <h1 class="text-center my-3">Create Your Account</h1>
+        <h1 class="text-center my-3">Sign Up</h1>
         <form action="<?php echo base_url().'singup/create_user'; ?>" method="POST" name="myForm" id="myForm"
             class="form-container mx-auto shadow-container">
             <div class="row">
@@ -87,8 +87,9 @@
                 <span></span>
             </div>
             <div class="status text-center text-danger font-weight-bold my-2"></div>
-            <button type="submit" class="btn btn-primary btn-block">Create Account</button>
-            <p>Already registered? <a href="<?php echo base_url().'login/index';?>">Login Now!</a></p>
+
+            <button type="submit" class="btn btn-primary btn-block mb-2 ">Create Account</button>
+            <p align="center">Already registered? <a href="<?php echo base_url().'login/index';?>">Login</a></p>
         </form>
     </div>
 
@@ -150,9 +151,9 @@
 
         //username validation
         if (userNameVal === "") {
-            setErrorMsg(userName, 'username cannot be blank');
-        } else if (userNameVal.length <= 4 || userNameVal.length >= 16) {
-            setErrorMsg(userName, 'username length should be between 5 and 15"');
+            setErrorMsg(userName, 'Username cannot be blank');
+        } else if (userNameVal.length <= 5 || userNameVal.length >= 16) {
+            setErrorMsg(userName, 'Username length should be between 6 and 15"');
         } else if (!isNaN(userNameVal)) {
             setErrorMsg(userName, 'only characters are allowed');
         } else {
@@ -161,52 +162,54 @@
 
         //firstname validation
         if (firstNameVal === "") {
-            setErrorMsg(firstName, 'firstname cannot be blank');
+            setErrorMsg(firstName, 'First Name cannot be blank');
         } else if (!isNaN(firstNameVal)) {
-            setErrorMsg(firstName, 'only characters are allowed');
+            setErrorMsg(firstName, 'Only characters are allowed');
         } else {
             setSuccessMsg(firstName);
         }
 
         //lastname validation
         if (lastNameVal === "") {
-            setErrorMsg(lastName, 'lastname cannot be blank');
+            setErrorMsg(lastName, 'Last Name cannot be blank');
+        } else if (!isNaN(firstNameVal)) {
+            setErrorMsg(lastName, 'Only characters are allowed');
         } else {
             setSuccessMsg(lastName)
         }
 
         //email validation
         if (emailVal === "") {
-            setErrorMsg(email, 'email cannot be blank');
+            setErrorMsg(email, 'Email cannot be blank');
         } else if (isEmail(emailVal) === "fail") {
-            setErrorMsg(email, 'enter valid email only');
+            setErrorMsg(email, 'Enter a valid email');
         } else {
             setSuccessMsg(email);
         }
 
         //password validation
         if (passVal === "") {
-            setErrorMsg(pass, 'password can not be blank');
+            setErrorMsg(pass, 'Password cannot be blank');
         } else if (passVal.length <= 7 || passVal.length >= 16) {
-            setErrorMsg(pass, 'password length should be between 8 and 15');
+            setErrorMsg(pass, 'Password length should be between 8 and 15');
         } else {
             setSuccessMsg(pass);
         }
 
         //phone validation
         if (phoneVal === "") {
-            setErrorMsg(phone, 'phone cannot be blank');
-        } else if (phoneVal.length != 10) {
-            setErrorMsg(phone, 'enter valid phone number only');
+            setErrorMsg(phone, 'Phone cannot be blank');
+        } else if (phoneVal.length != 11) {
+            setErrorMsg(phone, 'Enter a valid phone number');
         } else {
             setSuccessMsg(phone);
         }
 
         //address validation
         if (addressVal === "") {
-            setErrorMsg(address, 'address cannot be blank');
+            setErrorMsg(address, 'Address cannot be blank');
         } else if (addressVal.length < 5) {
-            setErrorMsg(address, "Enter valid address only");
+            setErrorMsg(address, "Enter a valid address");
         } else {
             setSuccessMsg(address);
         }

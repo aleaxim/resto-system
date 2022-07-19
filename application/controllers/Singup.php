@@ -16,12 +16,16 @@ class Singup extends CI_Controller {
     public function create_user() {
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<p class="invalid-feedback">','</p>');
-        $this->form_validation->set_rules('username', 'Username','trim|required');
-        $this->form_validation->set_rules('firstname', 'First Name','trim|required');
-        $this->form_validation->set_rules('lastname', 'Last Name','trim|required');
-        $this->form_validation->set_rules('email', 'Email','trim|required');
+        $this->form_validation->set_rules('username', 'Username','trim|required|min_length[6]|is_unique[users.username]|alpha_numeric', array(
+            'is_unique' => '%s already taken.'
+        ));
+        $this->form_validation->set_rules('firstname', 'First Name','trim|required|alpha');
+        $this->form_validation->set_rules('lastname', 'Last Name','trim|required|alpha');
+        $this->form_validation->set_rules('email', 'Email','trim|required|valid_email|is_unique[users.email]', array(
+            'is_unique' => '%s is already existing.'
+        ));
         $this->form_validation->set_rules('password', 'Password','trim|required');
-        $this->form_validation->set_rules('phone', 'Phone','trim|required');
+        $this->form_validation->set_rules('phone', 'Phone','trim|required|numeric');
         $this->form_validation->set_rules('address', 'Address','trim|required');
 
         if($this->form_validation->run() == true) {
@@ -34,7 +38,7 @@ class Singup extends CI_Controller {
             $formArray['phone'] = $this->input->post('phone');
             $formArray['address'] = $this->input->post('address');
             $this->User_model->create($formArray);
-            $this->session->set_flashdata("success", "Account created successfully, please login");
+            $this->session->set_flashdata("success", "Account created successfully. Please login to access your account.");
             redirect(base_url().'login/index');
         } else {
             $this->load->view('front/singup');

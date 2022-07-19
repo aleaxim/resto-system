@@ -7,7 +7,7 @@ class User extends CI_Controller {
         parent::__construct();
         $admin = $this->session->userdata('admin');
         if(empty($admin)) {
-            $this->session->set_flashdata('msg', 'Your session has been expired');
+            $this->session->set_flashdata('msg', 'Your session has expired');
             redirect(base_url().'admin/login/index');
         }
     }
@@ -25,12 +25,16 @@ class User extends CI_Controller {
         $this->load->model('User_model');
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<p class="invalid-feedback">','</p>');
-        $this->form_validation->set_rules('username', 'Username','trim|required');
-        $this->form_validation->set_rules('firstname', 'First Name','trim|required');
-        $this->form_validation->set_rules('lastname', 'Last Name','trim|required');
-        $this->form_validation->set_rules('email', 'Email','trim|required');
+        $this->form_validation->set_rules('username', 'Username','trim|required|min_length[6]|is_unique[users.username]|alpha_numeric', array(
+            'is_unique' => '%s is already taken.'
+        ));
+        $this->form_validation->set_rules('firstname', 'First Name','trim|required|alpha');
+        $this->form_validation->set_rules('lastname', 'Last Name','trim|required|alpha');
+        $this->form_validation->set_rules('email', 'Email','trim|required|valid_email|is_unique[users.email]', array(
+            'is_unique' => '%s is already existing.'
+        ));
         $this->form_validation->set_rules('password', 'Password','trim|required');
-        $this->form_validation->set_rules('phone', 'Phone','trim|required');
+        $this->form_validation->set_rules('phone', 'Phone','trim|required|numeric');
         $this->form_validation->set_rules('address', 'Address','trim|required');
 
         if($this->form_validation->run() == true) {

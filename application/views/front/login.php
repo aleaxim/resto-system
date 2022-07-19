@@ -25,7 +25,7 @@
           echo "<div class='alert alert-danger m-3 mx-auto'>".$this->session->flashdata('msg')."</div>";
         }
         ?>
-        <h4 class="pb-4 border-bottom text-center">Login To Your Account</h4>
+        <h2 class="pb-4 text-center">Login</h2>
         <form action="<?php echo base_url().'login/authenticate' ;?>" name="loginform" id="loginform" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -41,9 +41,9 @@
                 <span></span>
             </div>
             <?php echo form_error('password'); ?>
-            <div class="py-3 pb-4 border-bottom">
-                <button type="submit" class="btn btn-success mr-3">Login</button>
-                <a href="<?php echo base_url().'singup/index' ?>" class="btn btn-danger">Register</a>
+            <div class="py-3 pb-4">
+                <button type="submit" class="btn btn-primary mb-2 btn-block">Login</button>
+                <p align="center">Don't have an account? <a href="<?php echo base_url().'singup/index';?>">Register</a></p>
             </div>
         </form>
     </div>
@@ -81,13 +81,13 @@
         const passwordVal = password.value.trim();
 
         if (usernameVal === "") {
-            setErrorMsg(username, 'username can be blank');
+            setErrorMsg(username, 'Username can be blank');
         } else {
             setSuccessMsg(username);
         }
 
         if (passwordVal === "") {
-            setErrorMsg(password, 'password can not be blank');
+            setErrorMsg(password, 'Password can not be blank');
         } else {
             setSuccessMsg(password);
         }
