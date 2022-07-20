@@ -6,7 +6,7 @@ class Home extends CI_Controller {
 	{
 		$this->load->model('Menu_model');
 		$dish = $this->Menu_model->getMenu();
-		$data['dishesh'] = $dish;
+		$data['dishes'] = $dish;
 		$this->load->view('front/partials/header');
 		$this->load->view('front/home', $data);
 		$this->load->view('front/partials/footer');

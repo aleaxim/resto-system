@@ -30,12 +30,11 @@ class Store extends CI_Controller {
 
         $config['upload_path']          = './public/uploads/restaurant/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
-        //$config['encrypt_name']         = true;
 
         $this->load->library('upload', $config);
+        $this->upload->initialize($config);
 
         
-
         $this->load->model('Store_model');
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<p class="invalid-feedback">','</p>');
@@ -59,10 +58,6 @@ class Store extends CI_Controller {
 
                     
                     $data = $this->upload->data();
-
-
-                    //resizing image for admin
-                    resizeImage($config['upload_path'].$data['file_name'], $config['upload_path'].'thumb/'.$data['file_name'], 300,270);
                     
 
                     $formArray['img'] = $data['file_name'];
@@ -135,9 +130,12 @@ class Store extends CI_Controller {
 
         $config['upload_path']          = './public/uploads/restaurant/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
-        //$config['encrypt_name']         = true;
+        
 
         $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+
+
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<p class="invalid-feedback">','</p>');
         $this->form_validation->set_rules('res_name', 'Restaurant name','trim|required');
@@ -159,10 +157,6 @@ class Store extends CI_Controller {
 
                     
                     $data = $this->upload->data();
-
-
-                    //resizing image
-                    resizeImage($config['upload_path'].$data['file_name'], $config['upload_path'].'thumb/'.$data['file_name'], 300,270);
 
 
                     $formArray['img'] = $data['file_name'];

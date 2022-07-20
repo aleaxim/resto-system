@@ -37,7 +37,7 @@ function updateCartItem(obj, rowid) {
                     <td>
                         <?php $image = $item['image'];?>
                         <img class="" width="70"
-                            src="<?php echo base_url().'public/uploads/dishesh/thumb/'.$image; ?>">
+                            src="<?php echo base_url().'public/uploads/dishes/thumb/'.$image; ?>">
                     </td>
                     <td><?php echo $item['name']; ?></td>
                     <td><?php echo '$'. $item['price']; ?></td>

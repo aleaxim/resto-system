@@ -39,6 +39,8 @@
                     <select name="o_hr" id="o_hr" class="form-control
                     <?php echo (form_error('o_hr') != "") ? 'is-invalid' : '';?>" data-placeholder="Choose a Category">
                         <option value="">--Select your Hours--</option>
+                        <option value="6am" <?php echo $store['o_hr'] == "8am" ? "selected" : "";?>>6am</option>
+                        <option value="7am" <?php echo $store['o_hr'] == "8am" ? "selected" : "";?>>7am</option>
                         <option value="8am" <?php echo $store['o_hr'] == "8am" ? "selected" : "";?>>8am</option>
                         <option value="9am" <?php echo $store['o_hr'] == "9am" ? "selected" : "";?>>9am</option>
                         <option value="10am" <?php echo $store['o_hr'] == "10am" ? "selected" : "";?>>10am</option>
@@ -50,10 +52,16 @@
                     <label class="control-label">Closing Time</label>
                     <select name="c_hr" id="c_hr" class="form-control
                     <?php echo (form_error('c_hr') != "") ? 'is-invalid' : '';?>" data-placeholder="Choose a Category">
-                        <option value="">--Select your Hours--</option>
+                    <option value="">--Select your Hours--</option>
+                        <option value="3pm <?php echo $store['c_hr'] == "6pm" ? "selected" : "";?>">3pm</option>
+                        <option value="4pm" <?php echo $store['c_hr'] == "7pm" ? "selected" : "";?>>4pm</option>
+                        <option value="5pm" <?php echo $store['c_hr'] == "8pm" ? "selected" : "";?>>5pm</option>
                         <option value="6pm <?php echo $store['c_hr'] == "6pm" ? "selected" : "";?>">6pm</option>
                         <option value="7pm" <?php echo $store['c_hr'] == "7pm" ? "selected" : "";?>>7pm</option>
                         <option value="8pm" <?php echo $store['c_hr'] == "8pm" ? "selected" : "";?>>8pm</option>
+                        <option value="9pm <?php echo $store['c_hr'] == "6pm" ? "selected" : "";?>">9pm</option>
+                        <option value="10pm" <?php echo $store['c_hr'] == "7pm" ? "selected" : "";?>>10pm</option>
+                        <option value="11pm" <?php echo $store['c_hr'] == "8pm" ? "selected" : "";?>>11pm</option>
                     </select>
                     <?php echo form_error('c_hr'); ?>
                 </div>
@@ -63,6 +71,9 @@
                     <?php echo (form_error('o_days') != "") ? 'is-invalid' : '';?>" data-placeholder="Choose a Category"
                         tabindex="1">
                         <option value="">--Select your Days--</option>
+                        <option value="mon-fri <?php echo $store['o_days'] == "mon-tue" ? "selected" : "";?>">mon-tue</option>
+                        <option value="mon-sat" <?php echo $store['o_days'] == "mon-wed" ? "selected" : "";?>>mon-wed</option>
+                        <option value="mon-fri <?php echo $store['o_days'] == "mon-thu" ? "selected" : "";?>">mon-thu</option>
                         <option value="mon-fri <?php echo $store['o_days'] == "mon-fri" ? "selected" : "";?>">mon-fri</option>
                         <option value="mon-sat" <?php echo $store['o_days'] == "mon-sat" ? "selected" : "";?>>mon-sat</option>
                         <option value="24hr-x7" <?php echo $store['o_days'] == "24hr-x7" ? "selected" : "";?>>24hr-x7</option>
@@ -78,8 +89,8 @@
                     <br>
                     <?php echo (!empty($errorImageUpload)) ? $errorImageUpload : '';?>
 
-                    <?php if($store['img'] != '' && file_exists('./public/uploads/restaurant/thumb/'.$store['img'])) { ?>
-                    <img class="mt-1" src="<?php echo base_url().'public/uploads/restaurant/thumb/'.$store['img']; ?>">
+                    <?php if($store['img'] != '' && file_exists('./public/uploads/restaurant/'.$store['img'])) { ?>
+                    <img class="mt-1" width="300" src="<?php echo base_url().'public/uploads/restaurant/'.$store['img']; ?>">
                     <?php } else {?>
                     <img width="300" src="<?php echo base_url().'public/uploads/no-image.png'?>">
                     <?php } ?>

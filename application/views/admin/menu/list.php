@@ -28,8 +28,8 @@
                     </tr>
                 </thead>
                 <tbody id="myTable">
-                    <?php if(!empty($dishesh)) { ?>
-                    <?php foreach($dishesh as $dish) {?>
+                    <?php if(!empty($dishes)) { ?>
+                    <?php foreach($dishes as $dish) {?>
                     <tr>
                         <td><?php echo $dish['r_id']; ?></td>
                         <td><?php echo $dish['name']; ?></td>

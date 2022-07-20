@@ -20,12 +20,12 @@
 </div>
 <div class="container p-4 dish-card">
     <div class="row">
-        <?php if(!empty($dishesh)) { ?>
-        <?php foreach($dishesh as $dish) { ?>
+        <?php if(!empty($dishes)) { ?>
+        <?php foreach($dishes as $dish) { ?>
         <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
             <div class="card mb-4 shadow-sm">
                 <?php $image = $dish['img'];?>
-                <img class="card-img-top" src="<?php echo base_url().'public/uploads/dishesh/thumb/'.$image; ?>">
+                <img class="card-img-top" src="<?php echo base_url().'public/uploads/dishes/thumb/'.$image; ?>">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <h4 class="card-title"><?php echo $dish['name']; ?></h4>

@@ -60,9 +60,9 @@
                     <?php echo(!empty($errorImageUpload))  ? 'is-invalid' : '';?>">
                     <?php echo (!empty($errorImageUpload)) ? $errorImageUpload : '';?>
 
-                    <?php if($dish['img'] != "" && file_exists('./public/uploads/dishesh/thumb/'.$dish['img'])) { ?>
+                    <?php if($dish['img'] != "" && file_exists('./public/uploads/dishes/thumb/'.$dish['img'])) { ?>
 
-                    <img src="<?php echo base_url().'public/uploads/dishesh/thumb/'.$dish['img'];?>">
+                    <img src="<?php echo base_url().'public/uploads/dishes/thumb/'.$dish['img'];?>">
 
                     <?php } else { ?>
                     <img width="300" src="<?php echo base_url().'public/uploads/no-image.png'?>">

@@ -14,8 +14,8 @@ class Menu extends CI_Controller {
 
     public function index() {
         $this->load->model('Menu_model');
-        $dishesh = $this->Menu_model->getMenu();
-        $data['dishesh'] = $dishesh;
+        $dishes = $this->Menu_model->getMenu();
+        $data['dishes'] = $dishes;
         $this->load->view('admin/partials/header');
         $this->load->view('admin/menu/list', $data);
         $this->load->view('admin/partials/footer');
@@ -27,7 +27,7 @@ class Menu extends CI_Controller {
         $this->load->model('Store_model');
         $store = $this->Store_model->getStores();
 
-        $config['upload_path']          = './public/uploads/dishesh/';
+        $config['upload_path']          = './public/uploads/dishes/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         //$config['encrypt_name']         = true;
 
@@ -114,7 +114,7 @@ class Menu extends CI_Controller {
 
         $this->load->helper('common_helper');
 
-        $config['upload_path']          = './public/uploads/dishesh/';
+        $config['upload_path']          = './public/uploads/dishes/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         //$config['encrypt_name']         = true;
 
@@ -147,12 +147,12 @@ class Menu extends CI_Controller {
 
                     //deleting existing images
 
-                    if (file_exists('./public/uploads/dishesh/'.$dish['img'])) {
-                        unlink('./public/uploads/dishesh/'.$dish['img']);
+                    if (file_exists('./public/uploads/dishes/'.$dish['img'])) {
+                        unlink('./public/uploads/dishes/'.$dish['img']);
                     }
 
-                    if(file_exists('./public/uploads/dishesh/thumb/'.$dish['img'])) {
-                        unlink('./public/uploads/dishesh/thumb/'.$dish['img']);
+                    if(file_exists('./public/uploads/dishes/thumb/'.$dish['img'])) {
+                        unlink('./public/uploads/dishes/thumb/'.$dish['img']);
                     }
         
                     $this->session->set_flashdata('dish_success', 'Dish updated successfully');
@@ -203,12 +203,12 @@ class Menu extends CI_Controller {
             redirect(base_url().'admin/menu');
         }
 
-        if (file_exists('./public/uploads/dishesh/'.$dish['img'])) {
-            unlink('./public/uploads/dishesh/'.$dish['img']);
+        if (file_exists('./public/uploads/dishes/'.$dish['img'])) {
+            unlink('./public/uploads/dishes/'.$dish['img']);
         }
 
-        if(file_exists('./public/uploads/dishesh/thumb/'.$dish['img'])) {
-            unlink('./public/uploads/dishesh/thumb/'.$dish['img']);
+        if(file_exists('./public/uploads/dishes/thumb/'.$dish['img'])) {
+            unlink('./public/uploads/dishes/thumb/'.$dish['img']);
         }
 
         $this->Menu_model->delete($id);
