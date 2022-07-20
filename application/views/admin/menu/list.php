@@ -12,7 +12,7 @@
         <?php endif ?>
         <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-                <h2>All Menu Details</h2>
+                <h2>Dish List</h2>
             </div>
             <input class="form-control mb-3" id="myInput" type="text" placeholder="Search .." style="width:50%;">
         </div>
@@ -20,7 +20,7 @@
             <table class="table table-bordered table-hover table-striped table-responsive">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>Restaurant</th>
                         <th>Dish Name</th>
                         <th>About</th>
                         <th>Price</th>
@@ -34,10 +34,10 @@
                         <td><?php echo $dish['r_id']; ?></td>
                         <td><?php echo $dish['name']; ?></td>
                         <td><?php echo $dish['about']; ?></td>
-                        <td><?php echo "$".$dish['price']; ?></td>
+                        <td><?php echo "₱".$dish['price']; ?></td>
                         <td>
                             <a href="<?php echo base_url().'admin/menu/edit/'.$dish['d_id']; ?>"
-                                class="btn btn-info mb-1"><i
+                                class="btn btn-secondary mb-1"><i
                                     class="fas fa-edit mr-1"></i>Edit</a>
 
                             <a href="javascript:void(0);" onclick="deleteMenu(<?php echo $dish['d_id']; ?>)"

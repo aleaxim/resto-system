@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="username">Enter Username</label>
+                    <label for="username">Username</label>
                     <input type="text" class="form-control
                     <?php echo (form_error('username') != "") ? 'is-invalid' : '';?>" name="username" id="userName"
                         placeholder="Enter Username" value="<?php echo set_value('username')?>">
@@ -14,7 +14,7 @@
                     <span></span>
                 </div>
                 <div class="form-group">
-                    <label for="firstname">Enter First Name</label>
+                    <label for="firstname">First Name</label>
                     <input type="text" class="form-control
                     <?php echo (form_error('firstname') != "") ? 'is-invalid' : '';?>" name="firstname" id="firstName"
                         placeholder="Enter First Name" value="<?php echo set_value('firstname')?>">
@@ -22,7 +22,7 @@
                     <span></span>
                 </div>
                 <div class="form-group">
-                    <label for="lastname">Enter Last Name</label>
+                    <label for="lastname">Last Name</label>
                     <input type="text" class="form-control 
                     <?php echo (form_error('lastname') != "") ? 'is-invalid' : '';?>" name="lastname" id="lastName"
                         placeholder="Enter Last Name" value="<?php echo set_value('lastname')?>">
@@ -32,17 +32,17 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">Email Address</label>
                     <input type="email" class="form-control
-                    <?php echo (form_error('email') != "") ? 'is-invalid' : '';?>" name="email" placeholder="Email"
+                    <?php echo (form_error('email') != "") ? 'is-invalid' : '';?>" name="email" placeholder="Enter Email Address"
                         id="email" value="<?php echo set_value('email')?>">
                     <?php echo form_error('email'); ?>
                     <span></span>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Contact</label>
+                    <label for="phone">Contact Number</label>
                     <input type="number" class="form-control
-                    <?php echo (form_error('phone') != "") ? 'is-invalid' : '';?>" name="phone" placeholder="Contact Number"
+                    <?php echo (form_error('phone') != "") ? 'is-invalid' : '';?>" name="phone" placeholder="Enter Contact Number"
                         id="phone" value="<?php echo set_value('phone')?>">
                     <?php echo form_error('phone'); ?>
                     <span></span>
@@ -51,7 +51,7 @@
                     <label for="password">Password</label>
                     <input type="password" class="form-control
                     <?php echo (form_error('password') != "") ? 'is-invalid' : '';?>" name="password" id="pass"
-                        placeholder="Password" value="<?php echo set_value('password')?>">
+                        placeholder="Enter Password" value="<?php echo set_value('password')?>">
                     <?php echo form_error('password'); ?>
                     <span></span>
                 </div>
@@ -126,7 +126,7 @@ const validate = () => {
     } else if (userNameVal.length <= 5 || userNameVal.length >= 16) {
         setErrorMsg(userName, 'Username length should be between 6 and 15"');
     } else if (!isNaN(userNameVal)) {
-        setErrorMsg(userName, 'only characters are allowed');
+        setErrorMsg(userName, 'Only alphabets and numbers are allowed');
     } else {
         setSuccessMsg(userName);
     }

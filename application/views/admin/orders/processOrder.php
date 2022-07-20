@@ -16,7 +16,7 @@
             </tr>
             <tr>
                 <td><strong>Price:</strong></td>
-                <td><?php echo "$".$order['price'] ?></td>
+                <td><?php echo "₱".$order['price'] ?></td>
             </tr>
             <tr>
                 <td><strong>Address:</strong></td>

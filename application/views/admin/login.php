@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
+    <title>Simpléng Kainan | Admin Login</title>
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url().'public/front/img/icon.svg';?>">
     <link rel="stylesheet" href="<?php echo base_url().'assets/css/bootstrap.min.css';?>">
     <script src="<?php echo base_url().'assets/js/jquery-3.6.0.min.js';?>"></script>
     <script src="<?php echo base_url().'assets/js/bootstrap.min.js';?>"></script>
     <link rel="stylesheet" href="<?php echo base_url().'/assets/css/dashboard.css';?>">
 </head>
-
 <body>
-    <div class="conatiner">
-        <h1 class="text-center mt-3">Admin Panel</h1>
+    <div class="container">
+        <h1 class="text-center mt-3">Admin Dasboard</h1>
         <?php
         if (!empty($this->session->flashdata('msg'))) {
           echo "<div class='alert alert-danger mb-3 mx-auto' style='width:50%'>".$this->session->flashdata('msg')."</div>";
@@ -22,7 +21,7 @@
       ?>
         <form action="<?php echo base_url().'admin/login/authenticate' ;?>" name="loginform" id="loginform"
             method="POST" class="form-container mx-auto">
-            <h2 class="pb-4 text-center">Login</h2>
+            <h2 class="pb-3 text-center">Login</h2>
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" class="form-control my-2" name="username" id="username" placeholder="Username">
@@ -35,7 +34,7 @@
                 <span></span>
             </div>
             <?php echo form_error('password'); ?>
-            <button type="submit" class="btn btn-info btn-block mb-2">Login</button>
+            <button type="submit" class="btn btn-success btn-block mb-2">Login</button>
         </form>
     </div>
     <script>

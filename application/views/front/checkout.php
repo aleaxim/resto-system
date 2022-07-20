@@ -24,9 +24,9 @@
                                     src="<?php echo base_url().'public/uploads/dishes/'.$image; ?>">
                             </td>
                             <td><?php echo $item['name']; ?></td>
-                            <td><?php echo '$'.$item['price']; ?></td>
+                            <td><?php echo '₱'.$item['price']; ?></td>
                             <td><?php echo $item['qty']; ?></td>
-                            <td><?php echo '$'.$item['subtotal']; ?></td>
+                            <td><?php echo '₱'.$item['subtotal']; ?></td>
                         </tr>
                         <?php } ?>
                         <?php } else { ?>
@@ -41,7 +41,7 @@
                         <tr>
                             <td colspan="4"></td>
                             <?php  if($this->cart->total_items() > 0) { ?>
-                            <td class="text-left">Total: <b><?php echo '$'.$this->cart->total();?></b></td>
+                            <td class="text-left">Total: <b><?php echo '₱'.$this->cart->total();?></b></td>
                             <?php } ?>
                         </tr>
                     </tfoot>

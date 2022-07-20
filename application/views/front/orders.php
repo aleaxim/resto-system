@@ -31,9 +31,9 @@
                     <tr>
                         <td><?php echo $order['d_name']; ?></td>
                         <td><?php echo $order['quantity']; ?></td>
-                        <td><?php echo '$'.$order['price']; ?></td>
+                        <td><?php echo '₱'.$order['price']; ?></td>
                         <?php if($status=="" or $status=="NULL") { ?>
-                        <td> <button type="button" class="btn btn-secondary" style="font-weight:bold;"><i class="fas fa-bars"></i> Dispatch</button></td>
+                        <td> <button type="button" class="btn btn-secondary"><i class="fas fa-bars"></i> Pending</button></td>
                         <?php } if($status=="in process") { ?>
                         <td> <button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin" aria-hidden="true"></span> On Your Way!</button></td>
                         <?php }?>
@@ -79,9 +79,9 @@
                         <td><?php echo date('d-M-Y',$cDate); ?></td>
                         <td><?php echo $order['d_name']; ?></td>
                         <td><?php echo $order['quantity']; ?></td>
-                        <td><?php echo '$'.$order['price']; ?></td>
+                        <td><?php echo '₱'.$order['price']; ?></td>
                         <td> <button type="button" class="btn btn-success"><i class="fas fa-check"></i> Delivered</button>
-                        <td><a href="<?php echo base_url().'orders/invoice/'.$order['o_id']; ?>" class="btn btn-info"><i class="fas fa-file-alt"></i> Invoice</a></td>
+                        <td><a href="<?php echo base_url().'orders/invoice/'.$order['o_id']; ?>" class="btn btn-secondary"><i class="fas fa-file-alt"></i> Invoice</a></td>
                     </tr>
                     <?php } ?>
                     <?php } ?>

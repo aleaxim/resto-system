@@ -6,15 +6,15 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="username">Enter Username</label>
+                    <label for="username">Username</label>
                     <input type="text" id="userName" class="form-control
                     <?php echo (form_error('username') != "") ? 'is-invalid' : '';?>" name="username"
-                        value="<?php echo set_value('username', $user['username'])?>">
+                        value="<?php echo set_value('username', $user['username'])?>" readonly>
                     <?php echo form_error('username'); ?>
                     <span></span>
                 </div>
                 <div class="form-group">
-                    <label for="firstname">Enter First Name</label>
+                    <label for="firstname">First Name</label>
                     <input type="text" id="firstName" class="form-control
                     <?php echo (form_error('firstname') != "") ? 'is-invalid' : '';?>" name="firstname"
                         value="<?php echo set_value('firstname', $user['f_name'])?>">
@@ -22,7 +22,7 @@
                     <span></span>
                 </div>
                 <div class="form-group">
-                    <label for="lastname">Enter Last Name</label>
+                    <label for="lastname">Last Name</label>
                     <input type="text" id="lastName" class="form-control 
                     <?php echo (form_error('lastname') != "") ? 'is-invalid' : '';?>" name="lastname"
                         value="<?php echo set_value('lastname', $user['l_name'])?>">
@@ -32,17 +32,17 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">Email Address</label>
                     <input type="email" id="email" class="form-control
-                    <?php echo (form_error('email') != "") ? 'is-invalid' : '';?>" name="email" placeholder="email"
-                        value="<?php echo set_value('email', $user['email'])?>">
+                    <?php echo (form_error('email') != "") ? 'is-invalid' : '';?>" name="email" placeholder="Email Address"
+                        value="<?php echo set_value('email', $user['email'])?>" readonly>
                     <?php echo form_error('email'); ?>
                     <span></span>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone</label>
+                    <label for="phone">Contact Number</label>
                     <input type="number" id="phone" class="form-control
-                    <?php echo (form_error('phone') != "") ? 'is-invalid' : '';?>" name="phone" placeholder="Phone"
+                    <?php echo (form_error('phone') != "") ? 'is-invalid' : '';?>" name="phone" placeholder="Contact Number"
                         value="<?php echo set_value('phone', $user['phone'])?>">
                     <?php echo form_error('phone'); ?>
                     <span></span>
@@ -50,8 +50,7 @@
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" id="pass" class="form-control
-                    <?php echo (form_error('password') != "") ? 'is-invalid' : '';?>" name="password"
-                        placeholder="Password" value="<?php echo set_value('password', $user['password'])?>">
+                    <?php echo (form_error('password') != "") ? 'is-invalid' : '';?>" name="password" required>
                     <?php echo form_error('password'); ?>
                     <span></span>
                 </div>
@@ -65,7 +64,7 @@
             <?php echo form_error('address'); ?>
             <span></span>
         </div>
-        <button type="submit" class="btn btn-success">Make Changes</button>
+        <button type="submit" class="btn btn-success">Update</button>
         <a href="<?php echo base_url().'admin/user/index'; ?>" class="btn btn-secondary">Back</a>
     </form>
 </div>
@@ -122,63 +121,65 @@ const validate = () => {
 
     //username validation
     if (userNameVal === "") {
-        setErrorMsg(userName, 'username cannot be blank');
-    } else if (userNameVal.length <= 4 || userNameVal.length >= 16) {
-        setErrorMsg(userName, 'username length should be between 5 and 15"');
+        setErrorMsg(userName, 'Username cannot be blank');
+    } else if (userNameVal.length <= 5 || userNameVal.length >= 16) {
+        setErrorMsg(userName, 'Username length should be between 6 and 15"');
     } else if (!isNaN(userNameVal)) {
-        setErrorMsg(userName, 'only characters are allowed');
+        setErrorMsg(userName, 'Only alphabets and numbers are allowed');
     } else {
         setSuccessMsg(userName);
     }
 
     //firstname validation
     if (firstNameVal === "") {
-        setErrorMsg(firstName, 'firstname cannot be blank');
+        setErrorMsg(firstName, 'First Name cannot be blank');
     } else if (!isNaN(firstNameVal)) {
-        setErrorMsg(firstName, 'only characters are allowed');
+        setErrorMsg(firstName, 'Only characters are allowed');
     } else {
         setSuccessMsg(firstName);
     }
 
     //lastname validation
     if (lastNameVal === "") {
-        setErrorMsg(lastName, 'lastname cannot be blank');
+        setErrorMsg(lastName, 'Last Name cannot be blank');
+    } else if (!isNaN(firstNameVal)) {
+        setErrorMsg(lastName, 'Only characters are allowed');
     } else {
         setSuccessMsg(lastName)
     }
 
     //email validation
     if (emailVal === "") {
-        setErrorMsg(email, 'email cannot be blank');
+        setErrorMsg(email, 'Email cannot be blank');
     } else if (isEmail(emailVal) === "fail") {
-        setErrorMsg(email, 'enter valid email only');
+        setErrorMsg(email, 'Enter a valid email');
     } else {
         setSuccessMsg(email);
     }
 
     //password validation
     if (passVal === "") {
-        setErrorMsg(pass, 'password can not be blank');
+        setErrorMsg(pass, 'Password cannot be blank');
     } else if (passVal.length <= 7 || passVal.length >= 16) {
-        setErrorMsg(pass, 'password length should be between 8 and 15');
+        setErrorMsg(pass, 'Password length should be between 8 and 15');
     } else {
         setSuccessMsg(pass);
     }
 
     //phone validation
     if (phoneVal === "") {
-        setErrorMsg(phone, 'phone cannot be blank');
-    } else if (phoneVal.length != 10) {
-        setErrorMsg(phone, 'enter valid phone number only');
+        setErrorMsg(phone, 'Phone cannot be blank');
+    } else if (phoneVal.length != 11) {
+        setErrorMsg(phone, 'Enter a valid phone number');
     } else {
         setSuccessMsg(phone);
     }
 
     //address validation
     if (addressVal === "") {
-        setErrorMsg(address, 'address cannot be blank');
+        setErrorMsg(address, 'Address cannot be blank');
     } else if (addressVal.length < 5) {
-        setErrorMsg(address, "Enter valid address only");
+        setErrorMsg(address, "Enter a valid address");
     } else {
         setSuccessMsg(address);
     }

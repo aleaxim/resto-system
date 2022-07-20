@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="<?php echo base_url('assets/css/profile.css');?>">
+<div class="container">
 <div class="row">
     <div class="col-md-6">
         <div class="wrapper mt-sm-5">
@@ -107,4 +108,5 @@
             </form>
         </div>
     </div>
+</div>
 </div>

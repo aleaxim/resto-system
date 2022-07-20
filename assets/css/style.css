@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Jost:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Jost:wght@400;500;600;700&display=swap');
 
 html,
 body {
@@ -13,8 +13,15 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: bold;
 }
 
+p {
+  font-size: 18px;
+}
+
 .navbar {
   padding: 0.8rem;
+}
+.navbar-logo{
+  width: 36px;
 }
 .navbar-brand {
   font-family: 'Archivo', sans-serif;
@@ -26,7 +33,11 @@ h1,h2,h3,h4,h5,h6 {
   padding-right: 20px;
 }
 .nav-link {
-  font-size: 1.1em !important;
+  font-size: 1.05em !important;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  font-weight: 500;
+  letter-spacing: 0.06em;
 }
 .dropdown:hover .dropdown-menu {
   display: block;
@@ -62,18 +73,25 @@ h1,h2,h3,h4,h5,h6 {
   padding-bottom: 1rem;
 }
 
+.btn {
+  text-transform: uppercase;
+  line-height: 1.2em;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
 .btn-primary {
-  background-color: #6648b1;
-  border: 1px solid #6648b1;
+  background-color: #FF3000;
+  border: 1px solid #FF3000;
 }
 .btn-primary:hover {
-  background-color: #563d7c;
-  border: 1px solid #563d7c;
+  background-color: #FB8C23;
+  border: 1px solid #FB8C23;
 }
 
 .padding {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   padding-bottom: 2rem;
 }
 
@@ -89,17 +107,22 @@ h1,h2,h3,h4,h5,h6 {
   margin-top: 0.3rem;
   margin-bottom: 1rem;
 }
+
+.text-muted{
+  color: #615e5d!important;
+}
+
 .fa-check-circle {
   color: #e54d26;
 }
 .fa-utensils {
-  color: #f54b4b;
+  color:#FF3000;
 }
 .fa-clipboard-check {
-  color: #2163af;
+  color:#FF3000;
 }
 .fa-bullseye {
-  color: #563d7c;
+  color: #FF3000;
 }
 .fa-heart {
   color: #2163af;
@@ -118,7 +141,7 @@ h1,h2,h3,h4,h5,h6 {
   object-fit: cover;
 }
 .dish-card .card-body {
-  background-color: #f5f5f5;
+  background-color: #F4F2F0;
 }
 .social a {
   font-size: 4.5em;
@@ -259,7 +282,7 @@ input[placeholder] {
   object-fit: cover;
 }
 .res-card .card {
-  background-color: #f5f5f5;
+  background-color: #F4F2F0;
 }
 @media only screen and (max-width: 768px) {
   .res-card .card-body {
