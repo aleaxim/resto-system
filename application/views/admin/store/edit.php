@@ -122,7 +122,7 @@
             </div>
         </div>
         <div class="form-actions">
-            <input type="submit" name="submit" class="btn btn-success" value="Make Changes">
+            <input type="submit" name="submit" class="btn btn-success" value="Update">
             <a href="<?php echo base_url().'admin/store/index'?>" class="btn btn-secondary">Cancel</a>
         </div>
     </form>

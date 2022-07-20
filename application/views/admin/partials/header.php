@@ -17,7 +17,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top mb-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?php echo base_url().'admin/home';?>">Admin Dashboard</a>
+            <a class="navbar-brand" href="<?php echo base_url().'admin/home';?>"><img class="navbar-logo" src="<?php echo base_url().'public/front/img/icon.svg';?>" alt="icon"> Admin Dashboard</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarRes">
                 <span class="navbar-toggler-icon"></span>
             </button>

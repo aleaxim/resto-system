@@ -136,15 +136,11 @@
                             <?php } ?>
                             <?php } else {?>
                             <tr>
-                                <td colspan="4">Records not found</td>
+                                <td colspan="4">No Records</td>
                             </tr>
                             <?php }?>
                         </tbody>
                     </table>
-                </div>
-                <div class="col-md-12">
-                    <a href="<?php $id=1; echo base_url().'admin/home/generate_pdf/'.$id; ?>"
-                        class="btn btn-success mt-3">Download Report</a>
                 </div>
             </div>
         </div>
@@ -173,15 +169,11 @@
                             <?php } ?>
                             <?php } else {?>
                             <tr>
-                                <td colspan="4">Records not found</td>
+                                <td colspan="4">No Records</td>
                             </tr>
                             <?php }?>
                         </tbody>
                     </table>
-                </div>
-                <div class="col-md-12">
-                    <a href="<?php $id=2; echo base_url().'admin/home/generate_pdf/'.$id; ?>"
-                        class="btn btn-success mb-3">Download Report</a>
                 </div>
             </div>
         </div>

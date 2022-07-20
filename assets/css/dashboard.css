@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Jost:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Jost:wght@400;500;600;700&display=swap');
 
 * {
   outline: none;
@@ -26,8 +26,15 @@ h1,h2,h3,h4,h5,h6 {
 .navbar li {
   padding-right: 20px;
 }
+.navbar-logo{
+  width: 32px;
+}
 .nav-link {
-  font-size: 1.1em !important;
+  font-size: 1em !important;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  font-weight: 500;
+  letter-spacing: 0.06em;
 }
 .dropdown:hover .dropdown-menu {
   display: block;

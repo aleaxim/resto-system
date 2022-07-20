@@ -71,7 +71,7 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary ml-2">Make Changes</button>
+        <button type="submit" class="btn btn-primary ml-2">Update</button>
         <a href="<?php echo base_url().'admin/menu/index'?>" class="btn btn-secondary">Back</a>
     </form>
 </div>
