@@ -46,7 +46,7 @@ class User_model extends CI_Model {
 
     public function activate($id){
         $this->db->where('u_id', $id);
-        $this->db->update('users', array('status' => 1));
+        $this->db->update('users', array('active_status' => 1));
     }
 
 }

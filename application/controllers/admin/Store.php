@@ -77,7 +77,7 @@ class Store extends CI_Controller {
                     redirect(base_url(). 'admin/store/index');
 
                 } else {
-                    //we got some errors
+                    //got some errors
                     $error = $this->upload->display_errors("<p class='invalid-feedback'>","</p>");
                     $data['errorImageUpload'] = $error;
                     $data['cats'] = $cat;
@@ -88,7 +88,7 @@ class Store extends CI_Controller {
 
                 
             } else {
-                //if no image is selcted we will add res data without image
+                //if no image is selcted, will add resto data without image
                 $formArray['name'] = $this->input->post('res_name');
                 $formArray['email'] = $this->input->post('email');
                 $formArray['phone'] = $this->input->post('phone');
@@ -178,10 +178,6 @@ class Store extends CI_Controller {
                         unlink('./public/uploads/restaurant/'.$store['img']);
                     }
 
-                    if(file_exists('./public/uploads/restaurant/thumb/'.$store['img'])) {
-                        unlink('./public/uploads/restaurant/thumb/'.$store['img']);
-                    }
-
                     $this->session->set_flashdata('res_success', 'Restaurant updated successfully');
                     redirect(base_url(). 'admin/store/index');
 
@@ -199,7 +195,7 @@ class Store extends CI_Controller {
                 
             } else {
 
-                //if no image is selcted we will add res data without image
+                //if no image is selcted, will add resto data without image
                 $formArray['name'] = $this->input->post('res_name');
                 $formArray['email'] = $this->input->post('email');
                 $formArray['phone'] = $this->input->post('phone');
@@ -241,9 +237,6 @@ class Store extends CI_Controller {
             unlink('./public/uploads/restaurant/'.$store['img']);
         }
 
-        if(file_exists('./public/uploads/restaurant/thumb/'.$store['img'])) {
-            unlink('./public/uploads/restaurant/thumb/'.$store['img']);
-        }
 
         $this->Store_model->delete($id);
 

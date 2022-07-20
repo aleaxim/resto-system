@@ -8,7 +8,7 @@ function updateCartItem(obj, rowid) {
             if (resp == 'ok') {
                 location.reload();
             } else {
-                alert('Cart update failde, please try again.');
+                alert('Quantity update failed. Please try again.');
                 location.reload();
             }
         });
@@ -37,7 +37,7 @@ function updateCartItem(obj, rowid) {
                     <td>
                         <?php $image = $item['image'];?>
                         <img class="" width="70"
-                            src="<?php echo base_url().'public/uploads/dishes/thumb/'.$image; ?>">
+                            src="<?php echo base_url().'public/uploads/dishes/'.$image; ?>">
                     </td>
                     <td><?php echo $item['name']; ?></td>
                     <td><?php echo '$'. $item['price']; ?></td>

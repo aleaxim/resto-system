@@ -1,20 +1,26 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700");
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Jost:wght@400;600;700&display=swap');
 
 html,
 body {
   height: 100%;
   width: 100%;
-  font-family: "Poppins", sans-serif;
-  color: #222;
+  font-family: 'Jost', sans-serif;
+  color: #1f1b1a;
 }
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: bold;
+}
+
 .navbar {
   padding: 0.8rem;
 }
 .navbar-brand {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
-  color: #6648b1 !important;
+  color: #1F1B1A !important;
 }
 .navbar li {
   padding-right: 20px;
@@ -43,6 +49,9 @@ body {
 }
 
 .carousel-caption h1 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  line-height: 1.12em;
   font-size: 500%;
   text-transform: uppercase;
 }
@@ -167,6 +176,7 @@ body {
   }
   .display-4 {
     font-size: 200%;
+    color: #1f1b1a;
   }
   .social a {
     font-size: 2.5em;

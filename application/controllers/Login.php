@@ -23,7 +23,7 @@ class Login extends CI_Controller {
              $user = $this->User_model->getByUsername($username);
 
             if(!empty($user)) {
-                if($user['status'] == 0){
+                if($user['active_status'] == 0){
                     $this->session->set_flashdata('msg', 'Your account is not yet activated. Please check your email for the activation link.');
                     redirect(base_url().'login/index');
                 }

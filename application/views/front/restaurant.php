@@ -13,7 +13,7 @@
         <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
             <div class="card mb-4 shadow-sm">
                 <?php $image = $store['img'];?>
-                <img class="card-img-top" src="<?php echo base_url().'public/uploads/restaurant/thumb/'.$image; ?>">
+                <img class="card-img-top" src="<?php echo base_url().'public/uploads/restaurant/'.$image; ?>">
                 <div class="card-body">
                     <h4 class="card-title"><?php echo $store['name']; ?></h4>
                     <p class="card-text mb-0"><?php echo $store['c_name']." Restaurant"; ?></p>

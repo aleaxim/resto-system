@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Food Ordering System CodeIgniter</title>
+    <title>Simpléng Kainan</title>
     <link rel="stylesheet" href="<?php echo base_url().'assets/css/bootstrap.min.css';?>">
     <script src="<?php echo base_url().'assets/js/jquery-3.6.0.min.js';?>"></script>
     <script src="<?php echo base_url().'assets/js/bootstrap.min.js';?>"></script>
@@ -19,7 +19,7 @@
         <div class="invoice mb-3">
             <div class="row mb-3 p-3">
                 <div class="col-6">
-                    <h3 style="color:purple"><b>Food Ordering System</b></h3>
+                    <h3 style="color:#FF3000"><b>Simpléng Kainan</b></h3>
                 </div>
                 <div class="col-6">
                     <p class="lead font-weight-bold mb-0"><?php echo $res['name'] ?></p>

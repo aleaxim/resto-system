@@ -41,8 +41,7 @@
         </div>
         <hr>
         <div class="col-12">
-            <p class="lead">The easiest way to your food. Food Ordering System provides fresh delivery
-                with in the 30 minutes and provide free food if order is not on time. So don't wait and start ordering right now!</p>
+            <p class="lead">The easiest way to your food. Simpléng Kainan provides fresh delivery within 30 minutes and provide free food if order is not on time. So don't wait and start ordering right now!</p>
         </div>
     </div>
 </div>
@@ -81,7 +80,7 @@
         <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
             <div class="card mb-4 shadow-sm">
                 <?php $image = $dish['img'];?>
-                <img class="card-img-top" src="<?php echo base_url().'public/uploads/dishes/thumb/'.$image; ?>">
+                <img class="card-img-top" src="<?php echo base_url().'public/uploads/dishes/'.$image; ?>">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <h4 class="card-title"><?php echo $dish['name']; ?></h4>
@@ -89,8 +88,7 @@
                     </div>
                     <p class="card-text"><?php echo $dish['about']; ?></p>
                     <a href="<?php echo base_url().'Dish/addToCart/'.$dish['d_id']; ?>" class="btn btn-primary"><i
-                            class="fas fa-cart-plus"></i> Add to
-                        Cart</a>
+                            class="fas fa-cart-plus"></i> Add to Cart</a>
                 </div>
             </div>
         </div>

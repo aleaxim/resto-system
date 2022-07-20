@@ -7,7 +7,7 @@ class Orders extends CI_Controller {
 
         $user = $this->session->userdata('user');
             if(empty($user)) {
-                $this->session->set_flashdata('msg', 'Your session has been expired');
+                $this->session->set_flashdata('msg', 'Your session has expired');
                 redirect(base_url().'login/');
             }
         $this->load->model('Order_model');

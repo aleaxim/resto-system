@@ -43,7 +43,7 @@
             <?php echo form_error('password'); ?>
             <div class="py-3 pb-4">
                 <button type="submit" class="btn btn-primary mb-2 btn-block">Login</button>
-                <p align="center">Don't have an account? <a href="<?php echo base_url().'singup/index';?>">Register</a></p>
+                <p align="center">Don't have an account? <a href="<?php echo base_url().'signup/index';?>">Register</a></p>
             </div>
         </form>
     </div>

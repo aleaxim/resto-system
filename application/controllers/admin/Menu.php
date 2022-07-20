@@ -29,7 +29,7 @@ class Menu extends CI_Controller {
 
         $config['upload_path']          = './public/uploads/dishes/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
-        //$config['encrypt_name']         = true;
+        
 
         $this->load->library('upload', $config);
 
@@ -49,10 +49,6 @@ class Menu extends CI_Controller {
                 if($this->upload->do_upload('image')) {
                     //file uploaded suceessfully
                     $data = $this->upload->data();
-                    //resizing image
-                    resizeImage($config['upload_path'].$data['file_name'], $config['upload_path'].'thumb/'.$data['file_name'], 300,270);
-
-                    resizeImage($config['upload_path'].$data['file_name'], $config['upload_path'].'front_thumb/'.$data['file_name'], 1120,270);
 
 
                     $formArray['img'] = $data['file_name'];
@@ -116,7 +112,6 @@ class Menu extends CI_Controller {
 
         $config['upload_path']          = './public/uploads/dishes/';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
-        //$config['encrypt_name']         = true;
 
         $this->load->library('upload', $config);
 
@@ -134,8 +129,6 @@ class Menu extends CI_Controller {
                 if($this->upload->do_upload('image')) {
                     //file uploaded suceessfully
                     $data = $this->upload->data();
-                    //resizing image
-                    resizeImage($config['upload_path'].$data['file_name'], $config['upload_path'].'thumb/'.$data['file_name'], 300,270);
 
                     $formArray['img'] = $data['file_name'];
                     $formArray['name'] = $this->input->post('name');
@@ -149,10 +142,6 @@ class Menu extends CI_Controller {
 
                     if (file_exists('./public/uploads/dishes/'.$dish['img'])) {
                         unlink('./public/uploads/dishes/'.$dish['img']);
-                    }
-
-                    if(file_exists('./public/uploads/dishes/thumb/'.$dish['img'])) {
-                        unlink('./public/uploads/dishes/thumb/'.$dish['img']);
                     }
         
                     $this->session->set_flashdata('dish_success', 'Dish updated successfully');
@@ -207,9 +196,6 @@ class Menu extends CI_Controller {
             unlink('./public/uploads/dishes/'.$dish['img']);
         }
 
-        if(file_exists('./public/uploads/dishes/thumb/'.$dish['img'])) {
-            unlink('./public/uploads/dishes/thumb/'.$dish['img']);
-        }
 
         $this->Menu_model->delete($id);
 

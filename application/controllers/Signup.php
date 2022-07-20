@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit ('No direct script access allowed');
 
-class Singup extends CI_Controller {
+class Signup extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
@@ -11,7 +11,7 @@ class Singup extends CI_Controller {
 
 
     public function index() {
-        $this->load->view('front/singup');
+        $this->load->view('front/signup');
     }
 
     public function create_user() {
@@ -62,7 +62,7 @@ class Singup extends CI_Controller {
             $this->email->message('
             <h2><b>Welcome to Simpléng Kainan, '.$formArray['f_name'].'!</b></h2>
             <p>Thank you for registering. To activate your account, please click on the button below.</p><br>
-            <a href="'.base_url('Singup/activate/'.$formArray['activation_code']).'" target="_blank" style="text-decoration: none; font-weight: bold;">Verify Email</a>');
+            <a href="'.base_url('Signup/activate/'.$formArray['activation_code']).'" target="_blank" style="text-decoration: none; font-weight: bold;">Verify Email</a>');
             if(!$this->email->send()){
                 echo $this->email->print_debugger();
             }
@@ -70,7 +70,7 @@ class Singup extends CI_Controller {
             $this->session->set_flashdata("success", "Account created successfully! Please check your email to activate your account.");
             redirect(base_url().'login/index');
         } else {
-            $this->load->view('front/singup');
+            $this->load->view('front/signup');
         }
     }
 

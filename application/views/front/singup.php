@@ -20,7 +20,7 @@
     <div class="wrapper container">
 
         <h1 class="text-center my-3">Sign Up</h1>
-        <form action="<?php echo base_url().'singup/create_user'; ?>" method="POST" name="myForm" id="myForm"
+        <form action="<?php echo base_url().'signup/create_user'; ?>" method="POST" name="myForm" id="myForm"
             class="form-container mx-auto shadow-container">
             <div class="row">
                 <div class="col-md-6">

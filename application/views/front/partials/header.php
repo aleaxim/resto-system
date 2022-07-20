@@ -20,7 +20,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?php echo base_url().'home/index';?>"><i class="fas fa-utensil-spoon"></i> Food Ordering System</a>
+            <a class="navbar-brand" href="<?php echo base_url().'home/index';?>">Simpléng Kainan</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarRes">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -40,7 +40,7 @@
                         <a class="nav-link" href="<?php echo base_url().'login';?>">Login</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="<?php echo base_url().'singup/index'?>">Register</a>
+                        <a class="nav-link" href="<?php echo base_url().'signup/index'?>">Register</a>
                     </li>
                     <?php } else {?>
                     <li class="nav-item dropdown active">

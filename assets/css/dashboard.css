@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700");
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Jost:wght@400;600;700&display=swap');
 
 * {
   outline: none;
@@ -7,14 +7,14 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Jost', sans-serif;
   color: #222;
 }
 .navbar {
   padding: 0.8rem;
 }
 .navbar-brand {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
   color: #6648b1 !important;
