@@ -6,6 +6,7 @@ class Singup extends CI_Controller {
     public function __construct(){
         parent::__construct();
         $this->load->model('User_model');
+        $this->load->helper('string');
     }
 
 
@@ -37,11 +38,50 @@ class Singup extends CI_Controller {
             $formArray['password'] = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
             $formArray['phone'] = $this->input->post('phone');
             $formArray['address'] = $this->input->post('address');
+            $formArray['activation_code'] = random_string('alnum', 16);
             $this->User_model->create($formArray);
-            $this->session->set_flashdata("success", "Account created successfully. Please login to access your account.");
+
+            // EMAIL VERIFICATION
+            $this->load->library('email');
+            $config_email = array(
+                'protocol' => 'smtp',
+                'smtp_host' => 'ssl://smtp.googlemail.com',
+                'smtp_port' => 465,
+                'smtp_user' => '', 
+                'smtp_pass' => '', 
+                'mailtype' => 'html',
+                'starttls' => true,
+                'newline' => "\r\n",
+                'charset' => $this->config->item('charset'),
+                'wordwrap' => TRUE
+            );
+            $this->email->initialize($config_email);
+            $this->email->from('no-reply@simplengkainan.com', 'Simpleng Kainan');
+            $this->email->to($this->input->post('email'));
+            $this->email->subject('Verify your email address');
+            $this->email->message('
+            <h2><b>Welcome to Simpléng Kainan, '.$formArray['f_name'].'!</b></h2>
+            <p>Thank you for registering. To activate your account, please click on the button below.</p><br>
+            <a href="'.base_url('Singup/activate/'.$formArray['activation_code']).'" target="_blank" style="text-decoration: none; font-weight: bold;">Verify Email</a>');
+            if(!$this->email->send()){
+                echo $this->email->print_debugger();
+            }
+
+            $this->session->set_flashdata("success", "Account created successfully! Please check your email to activate your account.");
             redirect(base_url().'login/index');
         } else {
             $this->load->view('front/singup');
         }
+    }
+
+    public function activate($activation_code){
+        $this->load->model('User_model');
+        $user = $this->User_model->get_by_activation_code($activation_code);
+        if($user){
+            $this->User_model->activate($user->u_id);
+        }
+        //load a view confirming that the account is activated
+        $this->session->set_flashdata("success", "Your email has been verified. You can now login.");
+        redirect(base_url().'login/index');
     }
 }

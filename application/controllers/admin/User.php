@@ -7,7 +7,7 @@ class User extends CI_Controller {
         parent::__construct();
         $admin = $this->session->userdata('admin');
         if(empty($admin)) {
-            $this->session->set_flashdata('msg', 'Your session has expired');
+            $this->session->set_flashdata('msg', 'You\'ve been logout');
             redirect(base_url().'admin/login/index');
         }
     }

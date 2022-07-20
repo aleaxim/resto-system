@@ -39,4 +39,14 @@ class User_model extends CI_Model {
         return $query->num_rows();
     }
 
+    public function get_by_activation_code($activation_code){
+        $query = $this->db->get_where('users', array('activation_code' => $activation_code));
+        return $query->row();
+    }
+
+    public function activate($id){
+        $this->db->where('u_id', $id);
+        $this->db->update('users', array('status' => 1));
+    }
+
 }
