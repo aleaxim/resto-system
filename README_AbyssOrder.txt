@@ -22,6 +22,6 @@ Password: password
 
 ======================================
 Additional Notes:
- - Do not change the project's folder name without updating $config['base_url']
+ - Do not change the project's folder name without updating $config['base_url'] and .htaccess
  - Did not receive an email? Try checking your spam folder
   

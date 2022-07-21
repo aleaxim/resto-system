@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Jost:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Jost:wght@400;500;600;700&display=swap');
 
 html,
 body {
@@ -95,10 +95,18 @@ p {
   padding-bottom: 2rem;
 }
 
+.bg-beige{
+  background-color: #F4F2F0;
+}
+
 .welcome {
   width: 75%;
   margin: 0 auto;
   padding-top: 2rem;
+}
+
+.welcome h1{
+  font-weight: 600;
 }
 
 .welcome hr {
@@ -121,7 +129,7 @@ p {
 .fa-clipboard-check {
   color:#FF3000;
 }
-.fa-bullseye {
+.fa-bowl-rice {
   color: #FF3000;
 }
 .fa-heart {
@@ -130,7 +138,7 @@ p {
 .fa-check-circle,
 .fa-utensils,
 .fa-clipboard-check,
-.fa-bullseye,
+.fa-bowl-rice,
 .fa-heart {
   font-size: 4em;
   margin: 1rem;
@@ -148,30 +156,20 @@ p {
   padding: 3rem;
 }
 
-.fa-facebook {
-  color: #3b5998;
-}
-
-.fa-twitter {
-  color: #00aced;
-}
-
-.fa-google-plus-g {
-  color: #dd4b39;
-}
-
-.fa-instagram {
-  color: #517fa4;
-}
+.fa-facebook, 
+.fa-twitter,
+.fa-google-plus-g,
+.fa-instagram, 
 .fa-youtube {
-  color: #bb0000;
+  color: #615e5d;
 }
+
 .fa-facebook:hover,
 .fa-twitter:hover,
 .fa-google-plus-g:hover,
 .fa-instagram:hover,
 .fa-youtube:hover {
-  color: #d5d5d5;
+  color: #FB8C23;
 }
 
 @media (max-width: 992px) {
