@@ -4,23 +4,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Food Ordering CodeIgniter</title>
+    <title>Simpléng Kainan</title>
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url().'public/front/img/icon.svg';?>">
     <link rel="stylesheet" href="<?php echo base_url().'assets/css/bootstrap.min.css';?>">
     <script src="<?php echo base_url().'assets/js/jquery-3.6.0.min.js';?>"></script>
     <script src="<?php echo base_url().'assets/js/bootstrap.min.js';?>"></script>
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://kit.fontawesome.com/25b0db1b46.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?php echo base_url('/assets/css/style.css'); ?>">
     <style>
     
 </style>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?php echo base_url().'home/index';?>">Simpléng Kainan</a>
+            <a class="navbar-brand" href="<?php echo base_url().'home/index';?>"><img class="navbar-logo" src="<?php echo base_url().'public/front/img/icon.svg';?>" alt="icon"> Simpléng Kainan</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarRes">
                 <span class="navbar-toggler-icon"></span>
             </button>

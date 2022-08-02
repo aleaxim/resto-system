@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Dashboard</title>
+    <title>Simpléng Kainan | Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url().'public/front/img/icon.svg';?>">
     <link rel="stylesheet" href="<?php echo base_url().'assets/css/bootstrap.min.css';?>">
     <script src="<?php echo base_url().'assets/js/jquery-3.6.0.min.js';?>"></script>
     <script src="<?php echo base_url().'assets/js/bootstrap.min.js';?>"></script>
@@ -12,12 +13,11 @@
     <link rel="stylesheet" href="<?php echo base_url('/assets/css/dashboard.css');?>">
 </head>
 
-<body class="bg-white">
-
+<body class="bg-white d-flex flex-column min-vh-100">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top mb-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?php echo base_url().'admin/home';?>">Admin Panel</a>
+            <a class="navbar-brand" href="<?php echo base_url().'admin/home';?>"><img class="navbar-logo" src="<?php echo base_url().'public/front/img/icon.svg';?>" alt="icon"> Admin Dashboard</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarRes">
                 <span class="navbar-toggler-icon"></span>
             </button>

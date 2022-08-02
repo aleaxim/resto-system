@@ -11,7 +11,7 @@
     <?php endif ?>
     <div class="row">
         <div class="col-md-6">
-            <h4>Available Restaurant/s</h4>
+            <h4>Restaurant List</h4>
         </div>
         <div class="col-md-6 text-right">
             <input class="form-control mb-3" id="myInput" type="text" placeholder="Search .." style="width:50%;">
@@ -47,7 +47,7 @@
                         <td><?php echo $store['address']; ?></td>
                         <td>
                             <a href="<?php echo base_url().'admin/store/edit/'.$store['r_id']?>"
-                                class="btn btn-info mb-1"><i class="fas fa-edit mr-1"></i>Edit</a>
+                                class="btn btn-secondary mb-1"><i class="fas fa-edit mr-1"></i>Edit</a>
 
                             <a href="javascript:void(0);" onclick="deleteStore(<?php echo $store['r_id']; ?>)"
                                 class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>

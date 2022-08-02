@@ -13,7 +13,7 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                    <h2>All Categories</h2>
+                    <h2>Categories</h2>
                 </div>
                 <input class="form-control mb-3" id="myInput" type="text" placeholder="Search .." style="width:50%;">
             </div>
@@ -34,7 +34,7 @@
                             <td><?php echo $cat['c_name']; ?></td>
                             <td>
                                 <a href="<?php echo base_url().'admin/category/edit/'.$cat['c_id']?>"
-                                    class="btn btn-info mb-1"><i
+                                    class="btn btn-secondary mb-1"><i
                                         class="fas fa-edit mr-1"></i>Edit</a>
                                 <a href="javascript:void(0);" onclick="deleteCat(<?php echo $cat['c_id']; ?>)"
                                     class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>

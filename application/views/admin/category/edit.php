@@ -7,7 +7,7 @@
             <?php echo form_error('category'); ?>
             <span></span>
         </div>
-        <button type="submit" class="btn btn-primary mr-2">Make Changes</button>
+        <button type="submit" class="btn btn-primary mr-2">Update</button>
         <a class="btn btn-secondary" href="<?php echo base_url().'admin/category/index';?>">Back</a>
     </form>
 </div>

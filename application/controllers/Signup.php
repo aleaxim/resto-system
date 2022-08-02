@@ -47,8 +47,8 @@ class Signup extends CI_Controller {
                 'protocol' => 'smtp',
                 'smtp_host' => 'ssl://smtp.googlemail.com',
                 'smtp_port' => 465,
-                'smtp_user' => '', 
-                'smtp_pass' => '', 
+                'smtp_user' => 'patricia.michaela18@gmail.com', 
+                'smtp_pass' => 'fbdwmewjeqyycqlo', 
                 'mailtype' => 'html',
                 'starttls' => true,
                 'newline' => "\r\n",
@@ -64,7 +64,7 @@ class Signup extends CI_Controller {
             <p>Thank you for registering. To activate your account, please click on the button below.</p><br>
             <a href="'.base_url('Signup/activate/'.$formArray['activation_code']).'" target="_blank" style="text-decoration: none; font-weight: bold;">Verify Email</a>');
             if(!$this->email->send()){
-                echo $this->email->print_debugger();
+                // echo $this->email->print_debugger();
             }
 
             $this->session->set_flashdata("success", "Account created successfully! Please check your email to activate your account.");

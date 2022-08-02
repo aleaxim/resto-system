@@ -77,8 +77,8 @@ class Profile extends CI_Controller {
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<p class="invalid-feedback">','</p>');
         $this->form_validation->set_rules('cPassword', 'Current password','trim|required');
-        $this->form_validation->set_rules('nPassword', 'New password','trim|required');
-        $this->form_validation->set_rules('nRPassword', 'New password','trim|required');
+        $this->form_validation->set_rules('nPassword', 'New password','trim|required|min_length[8]');
+        $this->form_validation->set_rules('nRPassword', 'Confirm password','trim|required|matches[nPassword]');
 
         if($this->form_validation->run() == true) { 
             $cPassword = $this->input->post('cPassword');
@@ -86,7 +86,7 @@ class Profile extends CI_Controller {
             $nRPassword = $this->input->post('nRPassword');
             if(password_verify($cPassword, $user['password']) == true) {
                 if($nPassword != $nRPassword) {
-                    $this->session->set_flashdata('pwd_error', 'password not match');
+                    $this->session->set_flashdata('pwd_error', 'Password does not match');
                     redirect(base_url(). 'profile/index');
                 }else {
                     $formArray['password'] = password_hash($this->input->post('nPassword'), PASSWORD_DEFAULT);

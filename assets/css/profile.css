@@ -4,7 +4,7 @@ body {
   font-family: 'Jost', sans-serif;
 }
 .wrapper {
-  background-color: aliceblue;
+  background-color: #F4F2F0;
   padding: 30px 50px;
   margin: 10px auto;
   max-width: 600px;
@@ -33,7 +33,7 @@ input[placeholder] {
 
 .form-control:focus {
   box-shadow: none;
-  border: 1.5px solid #0779e4;
+  border: 1.5px solid #FF3000;
 }
 
 select {
@@ -51,16 +51,17 @@ select:focus {
 
 .button {
   background-color: #fff;
-  color: #0779e4;
+  color: #FF3000;
 }
 
 .button:hover {
-  background-color: #0779e4;
+  background-color: #FF3000;
   color: #fff;
 }
 
 .btn-primary {
-  background-color: #0779e4;
+  background-color: #FB8C23;
+  border: 1px solid #FB8C23;
 }
 
 .danger {
@@ -74,6 +75,12 @@ select:focus {
   color: #fff;
 }
 
+a {
+  color: #FB8C23;
+}
+a:hover {
+  color: #FF3000;
+}
 
 .form-group .success {
   border-color: #2ecc71;

@@ -38,7 +38,7 @@
                     <label for="price">Price</label>
                     <input type="Price" class="form-control my-2
                     <?php echo (form_error('price') != "") ? 'is-invalid' : '';?>" id="price" name="price"
-                        placeholder="Enter Price" value="<?php echo set_value('price', $dish['price']); ?>">
+                        placeholder="Enter Price ₱" value="<?php echo set_value('price', $dish['price']); ?>">
                     <span></span>
                     <?php echo form_error('price'); ?>
                 </div>
@@ -71,7 +71,7 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary ml-2">Make Changes</button>
+        <button type="submit" class="btn btn-primary ml-2">Update</button>
         <a href="<?php echo base_url().'admin/menu/index'?>" class="btn btn-secondary">Back</a>
     </form>
 </div>

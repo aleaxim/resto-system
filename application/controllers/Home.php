@@ -36,7 +36,7 @@ class Home extends CI_Controller {
             $config['mailtype'] = 'html';
             $config['charset'] = 'iso-8859-1';
             $config['wordwrap'] = TRUE;
-            $config['newline'] = "\r\n"; //use double quotes
+            $config['newline'] = "\r\n"; 
             $this->load->library('email', $config);
             $this->email->initialize($config);    
 			$this->email->from($emailFrom, $name);
@@ -45,10 +45,10 @@ class Home extends CI_Controller {
             $this->email->message($message);
 			
 			if ($this->email->send()){
-				$this->session->set_flashdata("msg","mail has been sent successfully");
+				$this->session->set_flashdata("msg","Mail has been sent successfully!");
 				redirect(base_url().'home/index');
 			} else {
-				$this->session->set_flashdata("msg","mail is not sent, try again.");
+				$this->session->set_flashdata("msg","Mail is not sent, please try again.");
 				redirect(base_url().'home/index');
 			}
 		} else {

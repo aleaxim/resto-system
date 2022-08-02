@@ -57,12 +57,12 @@
                                 <td><?php echo $res['name']; ?></td>
                                 <td><?php echo $order['d_name']; ?></td>
                                 <td><?php echo $order['quantity']; ?></td>
-                                <td><?php echo '$'.$dish['price']; ?></td>
+                                <td><?php echo '₱'.$dish['price']; ?></td>
                             </tr>
                             <tr>
                                 <td colspan="2"></td>
                                 <td class="font-weight-bold">Total</td>
-                                <td class="font-weight-bold"><?php echo '$'.$order['price'] ?></td>
+                                <td class="font-weight-bold"><?php echo '₱'.$order['price'] ?></td>
                             </tr>
                         </tbody>
                     </table>
@@ -73,7 +73,7 @@
         <footer class="text-center">
             <p class="mb-0">Thank You For Your Orders and Choosing Us!</p>
             <p>We Hope To See You Again</p>
-            <p>For terms & conditions Please visit www.website.com</p>
+            <p>For terms & conditions Please visit www.AbyssFoodOrder.com</p>
         </footer>
     </div>
     <div class="container text-center">

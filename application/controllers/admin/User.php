@@ -5,6 +5,7 @@ class User extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
+        $this->load->helper('string');
         $admin = $this->session->userdata('admin');
         if(empty($admin)) {
             $this->session->set_flashdata('msg', 'You\'ve been logout');
@@ -46,11 +47,37 @@ class User extends CI_Controller {
             $formArray['password'] = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
             $formArray['phone'] = $this->input->post('phone');
             $formArray['address'] = $this->input->post('address');
-
+            $formArray['activation_code'] = random_string('alnum', 16);
 
             $this->User_model->create($formArray);
 
-            $this->session->set_flashdata('success', 'User added successfully');
+            // EMAIL VERIFICATION
+            $this->load->library('email');
+            $config_email = array(
+                'protocol' => 'smtp',
+                'smtp_host' => 'ssl://smtp.googlemail.com',
+                'smtp_port' => 465,
+                'smtp_user' => 'patricia.michaela18@gmail.com', 
+                'smtp_pass' => 'fbdwmewjeqyycqlo', 
+                'mailtype' => 'html',
+                'starttls' => true,
+                'newline' => "\r\n",
+                'charset' => $this->config->item('charset'),
+                'wordwrap' => TRUE
+            );
+            $this->email->initialize($config_email);
+            $this->email->from('no-reply@simplengkainan.com', 'Simpleng Kainan');
+            $this->email->to($this->input->post('email'));
+            $this->email->subject('Verify your email address');
+            $this->email->message('
+            <h2><b>Welcome to Simpléng Kainan, '.$formArray['f_name'].'!</b></h2>
+            <p>Thank you for registering. To activate your account, please click on the button below.</p><br>
+            <a href="'.base_url('Signup/activate/'.$formArray['activation_code']).'" target="_blank" style="text-decoration: none; font-weight: bold;">Verify Email</a>');
+            if(!$this->email->send()){
+                // echo $this->email->print_debugger();
+            }
+
+            $this->session->set_flashdata('success', 'User added successfully! Activation link is sent on email.');
             redirect(base_url(). 'admin/user/index');
 
 

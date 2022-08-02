@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="container shadow-container">
+    <div class="container">
         <?php if($this->session->flashdata('success') != ""):?>
         <div class="alert alert-success">
             <?php echo $this->session->flashdata('success');?>
@@ -17,7 +17,7 @@
             <input class="form-control mb-3" id="myInput" type="text" placeholder="Search .." style="width:50%;">
         </div>
         <div class="table-responsive-sm">
-            <table class="table table-bordered table-striped table-hover table-responsive">
+            <table class="table table-striped table-hover table-responsive">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -43,7 +43,7 @@
                         <td><?php echo $user['address']; ?></td>
                         <td>
                             <a href="<?php echo base_url().'admin/user/edit/'.$user['u_id'];?>"
-                                class="btn btn-info mb-1"><i
+                                class="btn btn-secondary mb-1"><i
                                     class="fas fa-edit mr-1"></i>Edit</a>
                             <a href="javascript:void(0);" onclick="deleteUser(<?php echo $user['u_id']; ?>)"
                                 class="btn btn-danger"><i class="fas fa-trash-alt"></i>   Delete</a>

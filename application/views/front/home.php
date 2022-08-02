@@ -34,12 +34,11 @@
         </div>
     </div>
 </div>
-<div class="container-fluid padding">
+<div class="container-fluid padding bg-beige">
     <div class="row text-center welcome">
         <div class="col-12">
-            <h1 class="display-4">Easy 3 Steps To Follow</h1>
+            <h1 class="display-4">Order in 3 Easy Steps</h1>
         </div>
-        <hr>
         <div class="col-12">
             <p class="lead">The easiest way to your food. Simpléng Kainan provides fresh delivery within 30 minutes and provide free food if order is not on time. So don't wait and start ordering right now!</p>
         </div>
@@ -53,7 +52,7 @@
             <p>First thing you can do is choose from our restautant partners easily!</p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
-            <i class="fas fa-bullseye"></i>
+            <i class="fa-solid fa-bowl-rice"></i>
             <h3>Choose A Tasty Dish</h3>
             <p>We've got you covered with menus from over various delivery restaurants online!</p>
         </div>
@@ -69,11 +68,11 @@
     <div class="row welcome text-center welcome">
         <div class="col-12">
             <h1 class="display-4">Popular Dishes</h1>
+            <p>We won't put a limit on your appetite, from snacks to hearty meals. Order as much as you'd like.</p>
         </div>
-        <hr>
     </div>
 </div>
-<div class="container-fluid padding dish-card">
+<div class="container p-4 dish-card">
     <div class="row">
         <?php if(!empty($dishes)) { ?>
         <?php foreach($dishes as $dish) { ?>
@@ -81,14 +80,14 @@
             <div class="card mb-4 shadow-sm">
                 <?php $image = $dish['img'];?>
                 <img class="card-img-top" src="<?php echo base_url().'public/uploads/dishes/'.$image; ?>">
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
                     <div class="d-flex justify-content-between align-items-center">
                         <h4 class="card-title"><?php echo $dish['name']; ?></h4>
-                        <h4 class="text-muted"><b>$<?php echo $dish['price']; ?></b></h4>
+                        <h4 class="text-muted"><b>₱<?php echo $dish['price']; ?></b></h4>
                     </div>
                     <p class="card-text"><?php echo $dish['about']; ?></p>
-                    <a href="<?php echo base_url().'Dish/addToCart/'.$dish['d_id']; ?>" class="btn btn-primary"><i
-                            class="fas fa-cart-plus"></i> Add to Cart</a>
+                    <a href="<?php echo base_url().'Dish/addToCart/'.$dish['d_id']; ?>" class="align-self-end btn btn-primary"><i
+                            class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             </div>
         </div>
@@ -107,16 +106,17 @@
             <h2>Connect With Us</h2>
         </div>
         <div class="col-12 social padding">
-            <a href=""><i class="fab fa-facebook"></i></a>
-            <a href=""><i class="fab fa-twitter"></i></a>
-            <a href=""><i class="fab fa-google-plus-g"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
-            <a href=""><i class="fab fa-youtube"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
         </div>
     </div>
 </div>
-<hr class="my-4">
-<section id="contact-us" class="container shadow my-4 p-4">
+<hr class="my-3">
+<div class="container-fluid bg-beige">
+<section id="contact-us" class="container my-5 p-4">
     <!--Section heading-->
     <?php if($this->session->flashdata('msg') != ""):?>
     <div class="alert alert-success">
@@ -124,30 +124,28 @@
     </div>
     <?php endif ?>
     <h2 class="text-center my-2 font-weight-bold">Contact Us</h2>
-    <p class="text-center">Always Here For You</p>
     <!--Section description-->
     <p class="text-center mx-auto mb-5"></p>
     <form name="contact-form" action="<?php echo base_url().'home/sendMail'; ?>" id="myForm" method="POST">
         <div class="row">
             <div class="col-md-6">
-                <div class="mb-2">
-                    <label class="mb-0" for="name" class="">Fullname*</label>
+                <div class="mb-1">
+                    <label class="mb-0" for="name" class="">Full Name*</label>
                     <input type="text" id="name" name="name" class="form-control" required <?php set_value("name");?>>
                     <span></span>
                 </div>
             </div>
             <div class="col-md-6">
                 <div>
-                    <label class="mb-0" for="email" class="">Email*</label>
+                    <label class="mb-0" for="email" class="">Email address*</label>
                     <input type="text" id="email" name="email" class="form-control" required <?php set_value("email");?>>
                     <span></span>
                 </div>
             </div>
-
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="mb-2">
+                <div class="mb-1">
                     <label class="mb-0" for="subject" class="">Subject</label>
                     <input type="text" id="subject" name="subject" class="form-control" <?php set_value("subject");?>>
                     <span></span>
@@ -165,10 +163,11 @@
             </div>
         </div>
         <div class="status text-danger font-weight-bold my-2"></div>
-        <button class="btn btn-info" type="submit">Submit</button>
+        <button class="btn btn-secondary" type="submit">Submit Message</button>
     </form>
-
 </section>
+</div>
+
 <script>
 const form = document.getElementById('myForm');
 const userName = document.getElementById('name');
