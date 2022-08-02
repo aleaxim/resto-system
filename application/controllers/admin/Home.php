@@ -34,21 +34,10 @@ class Home extends CI_Controller {
 
         $dishReport = $this->Admin_model->dishReport();
         $data['dishReport'] = $dishReport;
+
         $this->load->view('admin/partials/header');
         $this->load->view('admin/dashboard', $data);
         $this->load->view('admin/partials/footer');
-    }
-
-    public function resReport() {
-        $resReport = $this->Admin_model->getResReport();
-        $data['resReport'] = $resReport;
-        $this->load->view('admin/reports/res_report', $data);
-    }
-    
-    public function dishesReport() {
-        $dishReport = $this->Admin_model->dishReport();
-        $data['dishReport'] = $dishReport;
-        $this->load->view('admin/reports/dish_report', $data);
     }
 
 }
