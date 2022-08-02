@@ -9,13 +9,13 @@ Database: database/simplengkainan_db
 
 =======================================
 Admin Credentials
-http://localhost/abyssorder/admin/login - to update
+http://localhost/abyssorder/admin/login
 
 Username: admin
 Password: admin
 
 Customer Credentials
-http://localhost/abyssorder/login - to update
+http://localhost/abyssorder/login
 
 Username: taylor
 Password: password

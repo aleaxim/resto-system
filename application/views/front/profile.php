@@ -16,7 +16,7 @@
                         <label for="username">Username</label>
                         <input type="text" name="username"
                             class="bg-light form-control <?php echo (form_error('username') != "") ? 'is-invalid' : '';?>"
-                            value="<?php echo set_value('username', $user['username']);?>">
+                            value="<?php echo set_value('username', $user['username']);?>"readonly>
                         <?php echo form_error('username'); ?>
                     </div>
                     <div class="row">
@@ -40,7 +40,7 @@
                             <label for="email">Email Address</label>
                             <input type="text"
                                 class="bg-light form-control <?php echo (form_error('email') != "") ? 'is-invalid' : '';?>"
-                                name="email" value="<?php echo set_value('email', $user['email'])?>">
+                                name="email" value="<?php echo set_value('email', $user['email'])?>" readonly>
                             <?php echo form_error('email'); ?>
                         </div>
                         <div class="col-md-6">
